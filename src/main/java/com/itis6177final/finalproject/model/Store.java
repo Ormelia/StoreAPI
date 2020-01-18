@@ -1,9 +1,33 @@
 package com.itis6177final.finalproject.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Store {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
+    private String contentUrl;
+
+    public Store(){}
+    public Store(String name) {
+        this.name = name;
+    }
+    public Store(String name, String contentUrl) {
+        this.name = name;
+        this.contentUrl = contentUrl;
+    }
+    public String getContentUrl() {
+        return contentUrl;
+    }
+
+    public void setContentUrl(String contentUrl) {
+        this.contentUrl = contentUrl;
+    }
 
     public Integer getId() {
         return id;

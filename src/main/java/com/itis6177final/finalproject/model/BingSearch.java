@@ -13,11 +13,21 @@ public class BingSearch {
     final String subscriptionKey;
     private BingImageSearchAPI client;
     private ArrayList<ImageObject> storeItems;
+    private String endPoint;
 
     public BingSearch(){
-        this.subscriptionKey = "91d2afd983e64b98931d56441f6a4dd4";
+        this.subscriptionKey = "34b85ba581794d5ab13fe6c111d73303";
         this.client = BingImageSearchManager.authenticate(subscriptionKey);
         this.storeItems = new ArrayList<>();
+        this.endPoint = "https://ormeliafinalproject.cognitiveservices.azure.com/bing/v7.0";
+    }
+
+    public String getEndPoint() {
+        return endPoint;
+    }
+
+    public void setEndPoint(String endPoint) {
+        this.endPoint = endPoint;
     }
 
     public String getSearchTerm() {
